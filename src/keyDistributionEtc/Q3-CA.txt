@@ -1,0 +1,28 @@
+3. Use firefox browser.
+a) The name of York's Central Authority is: GlobalSign RSA OV SSL CA 2018
+b) The certificate expiry date is: 7/30/2022
+c) The name of the subject is: yorku.ca
+d) The subject's e and n are exponent: 65537 and modulus: BB:64:83:45:7C:43:1B:3C:12:0C:40:B0:EB:13:5D:23:73:5C:79:6E:AC:B8:6C:65:2B:A5:05:BB:AC:B9:26:5F:B7:A9:F5:C0:A6:55:4A:9F:F8:02:0C:04:63:94:31:EE:48:45:D9:70:1B:CA:73:9C:F3:0B:10:60:E8:8F:70:E8:80:AB:BE:44:A1:F5:CC:34:0A:68:10:26:B7:D2:06:FE:AD:29:8C:31:37:13:0F:39:EC:57:4C:EA:EA:6B:93:D0:56:26:D8:06:BA:5B:45:19:B8:FC:93:F4:46:22:36:AE:92:31:BC:97:76:13:4F:4F:F1:65:50:5F:F7:5D:61:EF:DC:C9:D9:FB:F7:72:C2:03:39:AB:B9:1E:94:03:28:98:DD:A6:93:77:73:BC:07:71:94:40:23:13:7C:C7:27:FF:D4:A0:AC:F7:7B:19:CE:5D:44:8B:11:E9:30:E8:81:AC:D3:29:C8:09:09:33:C9:DE:23:CC:37:6F:77:C7:8D:82:07:71:6E:A0:ED:0B:6C:E6:42:0E:07:E8:BF:1E:9E:DB:20:09:25:11:22:98:F7:23:74:06:AF:85:8C:32:97:98:B0:19:6E:03:2A:56:CA:7D:CB:F6:54:29:7E:FF:7B:B8:01:AE:D8:C2:A2:35:7E:58:95:C7:59:EA:0D:81:39:31
+e) The algorithm that the CA uses to sign the certificate is: RSA
+
+
+
+
+1) 
+1. 
+Alice wants to talk to Bob so she makes a request to the KDC which contains her IDA and Bob's IDB. 
+The symmetric session key KS is encrypted 
+with the key used for Alice to communicate with the KDC.
+
+2. 
+The KDC's response to Alice is to send her Bob's ID concatenated with the encryption of her ID and the symmetric key encrypted using the key between the KDC and Bob
+
+3. Alice is then able to send Bob a message
+
+a) Alice and Bob can authenticate each other by sending an encrypted NONCE value. Alice can send Bob the NONCE value, and then Bob can respond by sending the NONCE 
+that is incremented.
+
+Someone in the middle could take the encrypted symmetric key that Alice sent the KDC, 
+replace it with the encrypted KNOWN symmetric key of a previous exchange between Alice and the KDC (we assume that the attacker
+knows the symmetric key somehow) and then because Alice CANNOT confirm that the response from the KDC actually contains
+the same symmetric key that used to send to Bob, 

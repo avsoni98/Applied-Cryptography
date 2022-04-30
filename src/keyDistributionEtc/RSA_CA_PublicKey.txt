@@ -1,0 +1,5 @@
+Note!!!
+
+The Central authority signs with their PRIVATE KEY in RSA and gives the PUBLIC KEY so that the signature may be decrypted by everyone
+but NOT created. Use (n,e) to decrypt. 
+Usually - we sign with the public key so that only the recipient can decrypt the message with their private key. 
